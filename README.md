@@ -13,7 +13,9 @@ person research and find things” task.
 
 
 **Url is http://s3.amazonaws.com/alexa-static/top-1m.csv.zip
-** Solution requires php ZipArchive to be installed e.g. sudo apt install php7.4-zip
+
+**Solution requires php ZipArchive to be installed e.g. sudo apt install php7.4-zip
+
 **Run alexa.php
 
 
@@ -28,6 +30,7 @@ Notes:
 There are many ways to do this. Try phantomJS. Install with Composer, else maybe try w3m or lynx.
 
 **using lynx
+
 **run filecontents.php
 
 # Task 3
@@ -46,7 +49,9 @@ Questions:
 ## 2. A very active website (approx 1m visitors a day) works perfectly for 50% of its users, but the other 50% timeout. Describe a few scenarios that might cause this and how you would investigate. 
 
 **Check the servers are responding (ping)
+
 **Check where traffic is not being routed correctly (traceroute)
+
 **Check the the load balancer/s is/are routing traffic correctly
 
 
@@ -58,9 +63,13 @@ Questions:
 ## 4. You need to write a php script that acts as a human and logs remotely into a website. Describe what technologies/code libraries might be required to achieve this.
 
 **use cURL to send a POST request to the site
+
 -or-
+
 ** use PHP's stream_context_create to submit a POST request
+
 -or-
+
 ** use a socket connection to the remote server (fsockopen).
 
 
