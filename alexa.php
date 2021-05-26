@@ -8,7 +8,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $data = curl_exec ($ch);
 curl_close ($ch);
 
-// save as top-1m.csv.zip
+// Save as top-1m.csv.zip
 $destination = "top-1m.csv.zip"; 
 $file = fopen($destination, "w+");
 fputs($file, $data);
@@ -16,11 +16,11 @@ fclose($file);
 
 echo " top-1m.csv.zip downloaded; ";
 
-// unzip
+// Unzip
 $zip = new ZipArchive;
 $res = $zip->open($destination);
 if ($res === TRUE) {
-    $zip->extractTo('.'); // directory to extract contents to
+    $zip->extractTo('.'); 
     $zip->close();
     echo $destination . ' extracted; ';
 
@@ -30,16 +30,13 @@ if ($res === TRUE) {
 
 $filename = "top-1m.csv";
 
-$file = fopen("output.csv", "w");
-
+// Save to a text file
+$file = fopen("newfile.txt", "w") or die("Unable to open file");
 $lines = file($filename);
-for($i = 39; $i < 49; $i++) {
 
-	$data = explode(',',$lines[$i]);
-
-	fputcsv($file, $data);
-
+for ($i = 39; $i < 49; $i++) {
+    $data = $lines[$i];
+    echo($data);
+    fwrite($file, $data);
 }
-
 fclose($file);
-echo "output.csv saved";
